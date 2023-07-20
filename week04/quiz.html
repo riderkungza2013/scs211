@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฟอร์มสมัครนักศึกษา</title>
+    <!-- เรียกใช้ Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="text-center">
+    <h1>ฟอร์มสมัครนักศึกษา</h1>
+    </div>
+    <div class="container mt-5">
+        <form id="registrationForm" class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputFirstName">ชื่อ *</label>
+                    <input type="text" class="form-control" id="inputFirstName" name="firstName" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputLastName">นามสกุล *</label>
+                    <input type="text" class="form-control" id="inputLastName" name="lastName" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputStudentID">รหัสนักศึกษา *</label>
+                    <input type="text" class="form-control" id="inputStudentID" name="studentID" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputMajor">สาขา *</label>
+                    <select class="form-control" id="inputMajor" name="major" required>
+                        <option value="" selected disabled>-- เลือกสาขา --</option>
+                        <option value="สาขาวิทยาการคอมพิวเตอร์">สาขาวิทยาการคอมพิวเตอร์</option>
+                        <option value="สาขาเทคโนโลยีสารสนเทศ">สาขาเทคโนโลยีสารสนเทศ</option>
+                        <option value="สาขาภูมิศาสตร์">สาขาภูมิศาสตร์</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputPhone">เบอร์โทรศัพท์ *</label>
+                    <input type="tel" class="form-control" id="inputPhone" name="phone" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">อีเมล *</label>
+                    <input type="email" class="form-control" id="inputEmail" name="email" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputGender">เพศ</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="genderMale" value="ชาย">
+                        <label class="form-check-label" for="genderMale">
+                            ชาย
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="หญิง">
+                        <label class="form-check-label" for="genderFemale">
+                            หญิง
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputBirthDate">วันเกิด</label>
+                    <input type="date" class="form-control" id="inputBirthDate" name="birthDate">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">ที่อยู่</label>
+                <textarea class="form-control" id="inputAddress" name="address" rows="3"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCitizenID">เลขประจำตัวประชาชน</label>
+                    <input type="text" class="form-control" id="inputCitizenID" name="citizenID">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputFaculty">คณะ</label>
+                    <input type="text" class="form-control" id="inputFaculty" name="faculty">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="inputAgree" name="agree" required>
+                    <label class="form-check-label" for="inputAgree">
+                        ยินยอมให้ใช้ข้อมูลตามที่ระบุ
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">ยืนยัน</button>
+            <button type="reset" class="btn btn-danger">ยกเลิก</button>
+        </form>
+    </div>
+
+    <!-- เรียกใช้ Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- สคริปต์เพื่อทำ custom validation -->
+    <script>
+        
+        var forms = document.querySelectorAll('.needs-validation');
+
+        
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    </script>
+</body>
+
+</html>
