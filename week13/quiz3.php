@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>รายชื่อ Staff</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
- 
+
   <style>
     body {
       font-family: "Poppins", sans-serif;
@@ -159,9 +159,6 @@
         }
       }
     </script>
-  </div>
-  <div>
-    SCS211
   </div>
 </body>
 
